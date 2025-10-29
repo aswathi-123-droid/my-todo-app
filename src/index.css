@@ -1,0 +1,201 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff7f0;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-container {
+  max-width: 650px;
+  background: #ffffff;
+  margin: 40px auto;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 15px rgba(255, 165, 0, 0.3);
+}
+
+.todo-title {
+  text-align: center;
+  color: #ff7a00;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.input-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ffa94d;
+  outline: none;
+  width: 180px;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #ff7a00;
+  box-shadow: 0 0 5px rgba(255, 122, 0, 0.3);
+}
+
+.date-field {
+  cursor: pointer;
+}
+
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.add-btn {
+  background-color: #ff7a00;
+}
+
+.add-btn:hover {
+  background-color: #e56a00;
+  transform: translateY(-5px); 
+}
+
+.edit-btn {
+  background-color: #ffa94d;
+}
+
+.edit-btn:hover {
+  background-color: #ff932e;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+}
+
+.delete-btn:hover {
+  background-color: #e63b3b;
+}
+
+.complete-btn {
+  background-color: #00b894;
+}
+
+.complete-btn:hover {
+  background-color: #009b7c;
+}
+
+.save-btn {
+  background-color: #ff7a00;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: black;
+}
+
+.cancel-btn:hover {
+  background-color: #aaa;
+}
+
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  background: #fff3e6;
+  border-left: 5px solid #ff7a00;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: transform 0.2s ease;
+}
+
+.task-item:hover {
+  transform: scale(1.02);
+}
+
+.task-info {
+  flex: 1;
+}
+
+.task-info strong {
+  color: #ff7a00;
+  font-size: 18px;
+}
+
+.task-info p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.task-date {
+  font-size: 13px;
+  color: #777;
+}
+
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.edit-mode {
+  background: #fff8f0;
+  border-left: 5px solid #ffa94d;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-col {
+  display: flex;
+  margin-top: 1rem;
+  gap: 0.8rem;
+}
+
+
+.completed {
+  opacity: 0.7;
+  background: #ffe9d6;
+  transition: all 0.3s ease;
+}
+
+.completed strong,
+.completed p,
+.completed span {
+  text-decoration: line-through;
+  color: #b35400;
+}
+
+.completed:hover {
+  transform: none;
+}
+
+
+.overdue {
+  border-left: 5px solid #ff2d2d;
+  background-color: #ffe0e0;
+  animation: blink 1.2s infinite alternate;
+}
+
+@keyframes blink {
+  from {
+    box-shadow: 0 0 8px #ff4d4d;
+  }
+  to {
+    box-shadow: 0 0 2px transparent;
+  }
+}
