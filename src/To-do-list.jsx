@@ -36,7 +36,6 @@ function ToDoList() {
       };
 
       setTask([...task, newObj]);
-      console.log("task")
       setNewTask("");
       setNewDesc("");
       setNewDate("");
@@ -78,10 +77,18 @@ function ToDoList() {
     const updatedObj = task.map((item, i) => (i === index ? saveObj : item));
     setTask(updatedObj);
     setInd(null);
+
+    setUptTask(null);
+    setUptDesc(null);
+    setUptDate(null);
   }
 
   function cancelTask() {
     setInd(null);
+
+    setUptTask(null);
+    setUptDesc(null);
+    setUptDate(null);
   }
 
  
@@ -94,16 +101,6 @@ function ToDoList() {
                       )
                     );
 
-  }
-
-  console.log(task)
-  function completeAll(){
-    setTask(t=>{
-      return t.map(item=>{
-        console.log(item)
-        return {...item,completeTask:true} 
-      })
-    })
   }
 
   useEffect(() => {
@@ -154,7 +151,6 @@ function ToDoList() {
         <button onClick={addNewTask} className="btn add-btn">
           Add Task
         </button>
-        <button className="btn add-btn" onClick={completeAll}>Complet All</button>
       </div>
       
 
@@ -210,14 +206,16 @@ function ToDoList() {
               </div>
               <div className="task-actions">
                 <button
-                  onClick={() =>{ if(!t.completeTask) editTask(index)}}
+                  onClick={() =>{editTask(index)}}
                   className="btn edit-btn"
+                  disabled={t.completeTask}
                 >
                   Edit
                 </button>
                 <button
-                  onClick={() => { if(!t.completeTask) deleteTask(index)}}
+                  onClick={() => {deleteTask(index)}}
                   className="btn delete-btn"
+                  disabled={t.completeTask}
                 >
                   Delete
                 </button>
